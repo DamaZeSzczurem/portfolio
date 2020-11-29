@@ -185,6 +185,7 @@ p{
 
 .contact-image{
   width:100%;
+  margin-top: 5vh;
   padding: 2vh;
 }
 
@@ -233,9 +234,13 @@ footer{
       background-image: none;
     }
 
-    .contact-image{
-      visibility: hidden;
-      height: 0;
-      padding: 0vh;
+    .contact-text{
+      text-align: left;
     }
+
+
+
+
+
+
  }

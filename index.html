@@ -194,32 +194,28 @@ Szukam pracy jako web dev. Moje mocne strony to kreatywność, rzeczowość i sa
 
 <!----------------------------- Contact section ------------------------------>
   <section id="contact" class="contact">
-      <h2 class="medium-heading black-text text-right">Napisz do mnie</h2>
-      <div class="row align-items-center">
+      <h2 class="medium-heading black-text text-right contact-text">Napisz do mnie</h2>
+      <div class="row">
         <div class="col-lg-5 ">
             <img class="contact-image" src="assets/contact.png"/>
         </div>
 
         <div class="col-lg-7 ">
 
-              <form id="contact-form">
+              <form id="contact-form" action="contact.php" method="post">
                     <div class="form-group">
                         <label class="text contact-label" for="exampleFormControlInput1">Twój mail</label>
-                        <input type="email" class="form-control text contact-input" id="exampleFormControlInput1" placeholder="name@example.com" name="reply">
+                        <input type="email" class="form-control text contact-input" placeholder="name@example.com" name="email">
                     </div>
                     <div class="form-group">
                         <label class="text contact-label"  for="exampleFormControlInput1">Twoje imię i nazwisko</label>
-                        <input class="form-control text contact-input" id="exampleFormControlInput1" placeholder="Anna Kowalska" name="username">
+                        <input class="form-control text contact-input" placeholder="Anna Kowalska" name="name">
                     </div>
                     <div class="form-group">
                         <label class="text contact-label"  for="exampleFormControlTextarea1">Treść wiadomości:</label>
-                        <textarea class="form-control text contact-input" id="exampleFormControlTextarea1" rows="3" placeholder="Piszę do Ciebie w sprawie nawiązania współpracy..." name="message"></textarea>
+                        <textarea class="form-control text contact-input"  rows="3" placeholder="Piszę do Ciebie w sprawie nawiązania współpracy..." name="message"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="captcha">Przepisz kod captcha</label>
-                        <img src="captcha.php" alt="Captcha">
-                        <input type="text" name="captcha" id="captcha" required>
-                    </div>
+
                     <button type="submit" name="submit" class="btn btn-primary contact-btn" value="Send">Wyślij</button>
               </form>
 

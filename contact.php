@@ -1,36 +1,45 @@
 <?php
 
-header('Content-Type: text/html; charset=utf-8');
+$errors = [];
+$errorMessage = '';
 
-session_start();
+if (!empty($_POST)) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['message']) and !empty($_POST['captcha'])){
+    if (empty($name)) {
+        $errors[] = 'Name is empty';
+    }
 
-	if($_POST['captcha']!=$_SESSION['captcha']){
-		die('Kod captcha jest nieprawidłowy');
-		$input = $_POST;
-	}else{
-		$email_odbiorcy = 'example@example.com';
+    if (empty($email)) {
+        $errors[] = 'Email is empty';
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Email is invalid';
+    }
 
-		$header = 'Reply-To: <'.$_POST['email']."> \r\n";
-		$header .= "MIME-Version: 1.0 \r\n";
-		$header .= "Content-Type: text/html; charset=UTF-8";
+    if (empty($message)) {
+        $errors[] = 'Message is empty';
+    }
 
-		$wiadomosc = "<p>Dostałeś wiadomość od:</p>";
-		$wiadomosc .= "<p>Imie i nazwisko: " . $_POST['name'] . "</p>";
-		$wiadomosc .= "<p>Email: " . $_POST['email'] . "</p>";
-		$wiadomosc .= "<p>Wiadomość: " . $_POST['message'] . "</p>";
 
-		$message = '<!doctype html><html lang="pl"><head><meta charset="utf-8">'.$wiadomosc.'</head><body>';
+    if (empty($errors)) {
+        $toEmail = 'czarna.kawe.prosze@gmail.com';
+        $emailSubject = 'New email from your contant form';
+        $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
 
-		$subject = 'Wiadomość ze strony...';
-		$subject = '=?utf-8?B?'.base64_encode($subject).'?=';
+        $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
+        $body = join(PHP_EOL, $bodyParagraphs);
 
-		if(mail($email_odbiorcy, $subject, $message, $header)){
-			die('Wiadomość została wysłana');
-		}else{
-			die('Wiadomość nie została wysłana');
-		}
-	}
+        if (mail($toEmail, $emailSubject, $body, $headers)) {
+            header('Location: thank-you.html');
+        } else {
+            $errorMessage = 'Oops, something went wrong. Please try again later';
+        }
+    } else {
+        $allErrors = join('<br/>', $errors);
+        $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+    }
 }
+
 ?>
