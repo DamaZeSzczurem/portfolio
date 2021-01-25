@@ -1,0 +1,73 @@
+.about{
+  @include section-padding;
+  background-color: $color--bg;
+  color: $color--font-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_image{
+    height: 50vh;
+    align-self: center;
+    background-image: url('./bg/avatar.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+      background-image: url('./bg/avatar-hover.png');
+    }
+  }
+  &_text-container{
+    .heading--small{
+      margin-bottom: $margin;
+    }
+    .text:first-of-type{
+      margin-bottom: $margin;
+      margin-left: $margin;
+    }
+  }
+  &_list{
+    @include list-style;
+    .about_icon{
+     @include icon-style;
+    }
+  }
+  @include respond-to('smaller'){
+    flex-direction: column;
+    text-align: center;
+    &_image{
+      width: 50%;
+      background-position: center;
+      &:hover{
+        width: 60%;
+      }
+    }
+    &_text-container{
+      width: 100%;
+    }
+  }
+  @include respond-to('bigger'){
+    flex-direction: row;
+    text-align: left;
+    &_image{
+      width: 30%;
+      background-position: left;
+      &:hover{
+        width: 40%;
+      }
+    }
+    &_text-container{
+      width: 60%;
+    }
+  }
+}
+
+.about-arrow{
+  color: $color--bg;
+  font-size: $heading--medium;
+  text-align: center;
+  position: relative;
+  top: -0.5*$heading--medium;
+  left:50%;
+  
+}
+

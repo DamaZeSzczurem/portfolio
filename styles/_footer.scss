@@ -1,0 +1,16 @@
+.footer{
+  @include section-padding;
+  background-color:$color--comp;
+  text-align: center;
+  color: $color--font-light;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .fa-heart{
+    color: red;
+  }
+  .fa-cookie-bite{
+    color: burlywood;
+  }
+}

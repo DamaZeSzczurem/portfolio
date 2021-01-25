@@ -1,0 +1,64 @@
+.white{
+  color: whitesmoke;
+}
+.black{
+  color: black;
+}
+.heading{
+  &--big{
+   font-family: 'Leckerli One', cursive;
+  }
+  &--medium{
+    font-family: 'Clicker Script', cursive;
+  }
+  &--small{
+    font-family: 'Clicker Script', cursive;
+  }
+}
+.text{
+  font-family: 'Epilogue', sans-serif;
+  line-height: 2;
+}
+
+@include respond-to('smaller'){
+  .heading{
+    &--big{
+     font-size: $heading--big*0.5;
+     line-height: 0.75;
+    }
+    &--medium{
+      font-size: $heading--medium*0.5;
+    }
+    &--small{
+      font-size: $heading--small;
+    }
+  }
+  .text{
+    font-size:$text*0.75;
+    line-height: 1.5;
+    &--small{
+      font-size: $text--small*0.75;
+    }
+  }
+}
+@include respond-to('bigger'){
+  .heading{
+    &--big{
+     font-size: $heading--big;
+     line-height: 0.75;
+    }
+    &--medium{
+      font-size: $heading--medium;
+    }
+    &--small{
+      font-size: $heading--small;
+    }
+  }
+  .text{
+    font-size:$text;
+    line-height: 2;
+    &--small{
+      font-size: $text--small;
+    }
+  }
+}

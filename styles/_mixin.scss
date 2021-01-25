@@ -1,0 +1,61 @@
+@mixin section-padding {
+  padding:5vh 10vw;  
+}
+
+@mixin icon-style{
+  margin-top: $margin*0.5;
+  margin-left: $margin;
+  height: $heading--small*1.5 ;
+  text-align: center;
+  transition: all 0.5s;
+  img{
+    height:$heading--small;
+    transition: all 0.5s;
+  }
+  .icon_label{
+    display: absolute;
+    visibility: hidden;
+    font-size: 1rem;
+  }
+  &:hover{
+    font-size: $heading--small*1.2;
+    img{
+      height: $heading--small*1.2;
+    }
+    .icon_label{
+      visibility: visible;
+    }
+  }
+}
+
+@mixin list-style{
+  list-style: none;
+    margin-left: $margin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: $heading--small;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

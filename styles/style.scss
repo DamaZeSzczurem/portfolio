@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease;
+}
+@import 'mediaQueries';
+@import 'var';
+@import'mixin';
+@import 'fonts';
+@import 'introduction';
+@import 'about';
+@import 'portfolio';
+@import 'contact';
+@import 'footer';
+body{
+  background-image: url('./bg/confetti.png');
+  background-repeat: round; 
+  @include scrollbars(10px, rgb(218, 218, 218),rgb(252, 246, 189));
+}

@@ -1,0 +1,117 @@
+.portfolio{
+  @include section-padding;
+  .heading--medium{
+    text-align: center;
+    margin-bottom: $margin;
+  }
+  &_card-background{
+    height: 90vh;
+    background-color: rgba(183, 156, 237,0.4);
+    border: 1px solid rgba(183, 156, 237,0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .single-item{
+      width: 70vw;
+    }
+    .big-card{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      img{
+        border-radius:15px;
+        margin: $margin;
+      }
+      &_text-container{
+        margin: $margin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p{
+          line-height: 1.5;
+        }
+        .big-card_list{
+          @include list-style;
+          .big-card_icon{
+            @include icon-style;
+          }
+        }
+        .button-container{
+          display: flex;
+          a{
+            width: 30%;
+            text-decoration: none;
+            padding: $padding;
+            margin: $margin;
+            text-align: center;
+            background-color: rgba(255,255,255,0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            line-height: 1;
+            letter-spacing: 1px;
+            color: $color--comp;
+            transition: all 0.5s ease;
+            span{
+              margin-right: 1rem;
+              text-align: center;
+            }
+            &:hover{
+              background-color: rgba(160, 157, 157, 0.562);
+              letter-spacing:4px;
+            }
+          }
+        }
+      }
+      }
+  }
+  @include respond-to('tiny'){
+    .big-card{
+      img{
+        display: none;
+      }
+    }
+  }
+  @include respond-to('smaller'){
+    .big-card{
+      flex-direction: column;
+      text-align: center;
+      img{
+        height: 20vh;
+      }
+      &_text-container{
+        width: 90%;
+      }
+      &_list{
+        justify-content: center;
+      }
+      .button-container{
+        justify-content: center;
+      }
+    }
+  }
+  @include respond-to('bigger'){
+    .big-card{
+      flex-direction: row;
+      text-align: left;
+      img{
+        width: 30%;
+      }
+      &_text-container{
+        width: 70%;
+      }
+      &_list{
+        justify-content: flex-start;
+      }
+      .button-container{
+        justify-content: flex-end;
+      }
+    }
+  }
+}
