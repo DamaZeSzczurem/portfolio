@@ -5,37 +5,57 @@
 @mixin icon-style{
   margin-top: $margin*0.5;
   margin-left: $margin;
-  height: $heading--small*1.5 ;
   text-align: center;
   transition: all 0.5s;
   img{
-    height:$heading--small;
     transition: all 0.5s;
   }
   .icon_label{
     display: absolute;
     visibility: hidden;
-    font-size: 1rem;
   }
-  &:hover{
-    font-size: $heading--small*1.2;
+  @include respond-to('smaller'){
+    height: $heading--small*0.5;
     img{
-      height: $heading--small*1.2;
+      height:$heading--small*0.5;
     }
     .icon_label{
-      visibility: visible;
+      font-size: 0.5rem;
+    }
+  }
+  @include respond-to('bigger'){
+    height: $heading--small*1.5 ;
+    img{
+      height:$heading--small;
+    }
+    .icon_label{
+      font-size: 1rem;
+    }
+    &:hover{
+      font-size: $heading--small*1.2;
+      img{
+        height: $heading--small*1.2;
+      }
+      .icon_label{
+        visibility: visible;
+      }
     }
   }
 }
 
 @mixin list-style{
   list-style: none;
-    margin-left: $margin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+  margin-left: $margin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  @include respond-to('smaller'){  
+    font-size: $heading--small*0.5;
+  }
+  @include respond-to('bigger'){
     font-size: $heading--small;
+  }
 }
 
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {

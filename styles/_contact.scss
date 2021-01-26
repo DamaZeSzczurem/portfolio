@@ -4,7 +4,7 @@
   text-align: left;
   display: flex;
   align-items:center;
-  justify-content: space-evenly;
+  
   &_image{
     width: 40%;
     max-height: 50vh;
@@ -26,9 +26,11 @@
   @include respond-to('smaller'){
     flex-direction: column-reverse;
     text-align: center;
+    justify-content: center;
   }
   @include respond-to('bigger'){
     flex-direction: row;
     text-align: left;
+    justify-content: space-evenly;
   }
 }

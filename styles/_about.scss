@@ -6,7 +6,6 @@
   justify-content: space-between;
   align-items: center;
   &_image{
-    height: 50vh;
     align-self: center;
     background-image: url('./bg/avatar.png');
     background-size: contain;
@@ -35,6 +34,7 @@
     flex-direction: column;
     text-align: center;
     &_image{
+      height: 20vh;
       width: 50%;
       background-position: center;
       &:hover{
@@ -49,6 +49,7 @@
     flex-direction: row;
     text-align: left;
     &_image{
+      height: 50vh;
       width: 30%;
       background-position: left;
       &:hover{

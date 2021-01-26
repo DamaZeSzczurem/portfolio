@@ -45,7 +45,7 @@
     font-size: 3rem;
   }
   .heading--small {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
   .text {
     font-size: 1.125rem;
@@ -269,7 +269,6 @@
 }
 
 .about_image {
-  height: 50vh;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -306,20 +305,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .about_list {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about_list {
+    font-size: 3rem;
+  }
 }
 
 .about_list .about_icon {
   margin-top: 1.25vh;
   margin-left: 2.5vh;
-  height: 4.5rem;
   text-align: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .about_list .about_icon img {
-  height: 3rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -327,19 +335,39 @@
 .about_list .about_icon .icon_label {
   display: absolute;
   visibility: hidden;
-  font-size: 1rem;
 }
 
-.about_list .about_icon:hover {
-  font-size: 3.6rem;
+@media (max-width: 1200px) {
+  .about_list .about_icon {
+    height: 1.5rem;
+  }
+  .about_list .about_icon img {
+    height: 1.5rem;
+  }
+  .about_list .about_icon .icon_label {
+    font-size: 0.5rem;
+  }
 }
 
-.about_list .about_icon:hover img {
-  height: 3.6rem;
-}
-
-.about_list .about_icon:hover .icon_label {
-  visibility: visible;
+@media (min-width: 1200px) {
+  .about_list .about_icon {
+    height: 4.5rem;
+  }
+  .about_list .about_icon img {
+    height: 3rem;
+  }
+  .about_list .about_icon .icon_label {
+    font-size: 1rem;
+  }
+  .about_list .about_icon:hover {
+    font-size: 3.6rem;
+  }
+  .about_list .about_icon:hover img {
+    height: 3.6rem;
+  }
+  .about_list .about_icon:hover .icon_label {
+    visibility: visible;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -351,6 +379,7 @@
     text-align: center;
   }
   .about_image {
+    height: 20vh;
     width: 50%;
     background-position: center;
   }
@@ -371,6 +400,7 @@
     text-align: left;
   }
   .about_image {
+    height: 50vh;
     width: 30%;
     background-position: left;
   }
@@ -475,20 +505,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .portfolio_card-background .big-card_text-container .big-card_list {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio_card-background .big-card_text-container .big-card_list {
+    font-size: 3rem;
+  }
 }
 
 .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon {
   margin-top: 1.25vh;
   margin-left: 2.5vh;
-  height: 4.5rem;
   text-align: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon img {
-  height: 3rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -496,19 +535,39 @@
 .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon .icon_label {
   display: absolute;
   visibility: hidden;
-  font-size: 1rem;
 }
 
-.portfolio_card-background .big-card_text-container .big-card_list .big-card_icon:hover {
-  font-size: 3.6rem;
+@media (max-width: 1200px) {
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon {
+    height: 1.5rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon img {
+    height: 1.5rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon .icon_label {
+    font-size: 0.5rem;
+  }
 }
 
-.portfolio_card-background .big-card_text-container .big-card_list .big-card_icon:hover img {
-  height: 3.6rem;
-}
-
-.portfolio_card-background .big-card_text-container .big-card_list .big-card_icon:hover .icon_label {
-  visibility: visible;
+@media (min-width: 1200px) {
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon {
+    height: 4.5rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon img {
+    height: 3rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon .icon_label {
+    font-size: 1rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon:hover {
+    font-size: 3.6rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon:hover img {
+    height: 3.6rem;
+  }
+  .portfolio_card-background .big-card_text-container .big-card_list .big-card_icon:hover .icon_label {
+    visibility: visible;
+  }
 }
 
 .portfolio_card-background .big-card_text-container .button-container {
@@ -518,10 +577,9 @@
 }
 
 .portfolio_card-background .big-card_text-container .button-container a {
-  width: 30%;
   text-decoration: none;
   padding: 1vh;
-  margin: 2.5vh;
+  margin-top: 2.5vh;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(20px);
@@ -573,6 +631,17 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .portfolio .big-card .button-container a {
+    width: 90%;
+    margin-left: 0;
   }
 }
 
@@ -602,6 +671,14 @@
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .portfolio .big-card .button-container a {
+    width: 30%;
+    margin-left: 2.5vh;
   }
 }
 
@@ -615,9 +692,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
 .contact_image {
@@ -647,6 +721,9 @@
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -657,6 +734,9 @@
         -ms-flex-direction: row;
             flex-direction: row;
     text-align: left;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
